@@ -4,7 +4,10 @@
 # image. `/nix` itself might not be empty, e.g. GKE adds a `lost+found` folder.
 # To circumvent this issue, it tests for the presence of `/nix/store` instead.
 if [ ! -e /nix/store ]; then
-  cp -Tdar /nix.orig /nix
+  cp -Tdar /tmp/nix.orig /nix
 fi
+
+export USER=nix
+source $HOME/.nix-profile/etc/profile.d/nix.sh
 
 exec "$@"
