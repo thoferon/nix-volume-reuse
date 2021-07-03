@@ -1,6 +1,6 @@
 FROM alpine
 
-RUN apk add curl sudo xz
+RUN apk add curl sudo xz git
 RUN echo "nix ALL = NOPASSWD: ALL" > /etc/sudoers
 
 RUN adduser -D nix
