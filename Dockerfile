@@ -1,6 +1,6 @@
 FROM alpine
 
-RUN apk add curl sudo xz git gcompat
+RUN apk add curl sudo xz git gcompat bash
 RUN echo "nix ALL = NOPASSWD: ALL" > /etc/sudoers
 
 RUN adduser -D nix
